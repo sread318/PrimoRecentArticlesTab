@@ -21,6 +21,6 @@ In each file, please update the following variables to match your institution.
 - itemType - How journals are labeled: 'Journal' or 'Serial'.
 
 ## Known issues
--Actions menu - In full display of an individual journal, the actions side menu disappears when the recent articles tab is selected.
--Tab not displaying for all journals - Some journals are not included in JournalTOC and will yield zero results. 
+- Actions menu - In full display of an individual journal, the actions side menu disappears when the recent articles tab is selected.
+- Tab not displaying for all journals - Some journals are not included in JournalTOC and will yield zero results. 
 
