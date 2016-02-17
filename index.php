@@ -2,7 +2,7 @@
  /**** Change per institution ****/
 $institutionCode = "LCC";
 $institutionView = "lcc_services_page";
-$journalTocUsername = "your username";
+$journalTocUsername = "username";
 $institutionCSS = "http://alliance-primo-sb.hosted.exlibrisgroup.com/primo_library/libweb/wro/primo_library_wro_LCC_en_US.css";
 $mashupCSS = "http://na01.alma.exlibrisgroup.com/view/branding_skin/css/mashup.css?skinName=summit_request_form&amp;version=February2016&amp;skinVersion=1442511264&amp;customerId=1840&amp;institutionId=1844";
 
