@@ -10,7 +10,7 @@ In each file, please update the following variables to match your institution.
 ### index.php
 - $institutionCode - Primo school code
 - $institutionView - Primo production view
-- $journalTocUsername - Username from the JournalTOC site. [Signup @ JournalTOC](http://www.journaltocs.ac.uk/index.php?action=register)
+- $journalTocUsername - Username from the JournalTOC site. [Signup @ JournalTOC](http://www.journaltocs.ac.uk/index.php?action=register
 - $institutionCSS - Custom CSS file in Primo Back Office
 - $mashupCSS - mashup.css file in Alma
 
@@ -19,6 +19,7 @@ In each file, please update the following variables to match your institution.
 - tabName - Name that will display to users in Primo
 - firstTab - True places the tab first. False places the tab last.
 - itemType - How journals are labeled: 'Journal' or 'Serial'.
+- email - Username from the JournalTOC site. [Signup @ JournalTOC](http://www.journaltocs.ac.uk/index.php?action=register).
 
 ## Known issues
 - Actions menu - In full display of an individual journal, the actions side menu disappears when the recent articles tab is selected.
