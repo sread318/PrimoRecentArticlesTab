@@ -10,10 +10,10 @@ Place the recentArticles.js and EXLTabApi.js in your footer file in Primo Back O
 - recentArticles.js
  
 ###Browser compatibility
--Safari 9+
--Chrome 48+
--Firefox 41+
--IE 11+
+- Safari 9+
+- Chrome 48+
+- Firefox 41+
+- IE 11+
 
 ###Mobile support
 -No, but could be styled in your local environment
