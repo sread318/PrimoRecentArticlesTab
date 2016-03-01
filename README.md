@@ -4,6 +4,22 @@ This is based on documentation found on the [ExLibris developer blog](https://de
 
 Place the recentArticles.js and EXLTabApi.js in your footer file in Primo Back Office.
 
+###Dependencies
+- EXLTabApi.js
+- External web server running index.php
+- recentArticles.js
+ 
+###Browser compatibility
+-Safari 9+
+-Chrome 48+
+-Firefox 41+
+-IE 11+
+
+###Mobile support
+-No, but could be styled in your local environment
+
+###Accessibility
+
 ## Edit per institution
 In each file, please update the following variables to match your institution.
 
