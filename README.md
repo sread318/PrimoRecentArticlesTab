@@ -36,8 +36,9 @@ In each file, please update the following variables to match your institution.
 - firstTab - True places the tab first. False places the tab last.
 - itemType - How journals are labeled: 'Journal' or 'Serial'.
 - email - Username from the JournalTOC site. [Signup @ JournalTOC](http://www.journaltocs.ac.uk/index.php?action=register).
+- displayActions - true to display the actions menu. false to hide the actions menu. 
 
 ## Known issues
-- Actions menu - In full display of an individual journal, the actions side menu disappears when the recent articles tab is selected.
+- Actions menu - In brief display, actions menu will only appear if a previous tab (details, view it) is clicked first.
 - Tab not displaying for all journals - Some journals are not included in JournalTOC and will yield zero results. 
 
