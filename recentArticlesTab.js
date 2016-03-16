@@ -221,7 +221,7 @@ function createActionsMenu(recordid, vid){
 	menu+='				</ol>';
 	menu+='</li>';
 
-
+	return menu;
 
 
 
