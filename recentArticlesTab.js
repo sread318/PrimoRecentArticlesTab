@@ -24,7 +24,7 @@ jQuery( document ).ready(function() {
 	displayActions=true;
 	
 	//Your institution's VID
-	var vid="LCC";
+	vid="LCC";
 	
 	var emailEnc=encodeURIComponent(email);
 
@@ -116,7 +116,11 @@ function updateURL(url){
 			$("div#"+recordid).parent("div").parent("div").parent("div").find(".EXLTabHeaderButtonPopout").children("a").attr("href", newUrl);
 			
 			if (displayActions==true){
-				var actions=$("div#"+recordid).parent("div").parent("div").parent("div").find(".EXLTabHeaderButtons").html();
+				//var actions=$("div#"+recordid).parent("div").parent("div").parent("div").find(".EXLTabHeaderButtons").html();
+				
+				var actions=createActionsMenu(recordid, vid);
+				console.log(actions);
+				
 				$(".EXLTabHeaderButtons").last().html(actions);
 			}
 		}
@@ -144,12 +148,12 @@ function createActionsMenu(recordid, vid){
 	menu+='	<ol class="EXLTabHeaderButtonSendToList">';
 			
 	menu+='		<li class="EXLButtonSendToMyShelf EXLButtonSendToMyShelfAdd">';
-	menu+='							<a href="basket.do?fn=create&amp;docs='+recordid+'&amp;exemode=async" onclick="boomCallToRum("eShelf_0",false);javascript:eshelfCreate(this,"'+recordid+'","false","scope:(E-LCC),scope:(P),primo_central_multiple_fe","1");return false;" title="Add to e-Shelf" target="blank">';
+	menu+='							<a href="basket.do?fn=create&amp;docs='+recordid+'&amp;exemode=async" onclick="boomCallToRum(\"eShelf_0\",false);javascript:eshelfCreate(this,\"'+recordid+'\",\"false\",\"scope:(E-LCC),scope:(P),primo_central_multiple_fe\",\"1\");return false;" title="Add to e-Shelf" target="blank">';
 	menu+='							<span class="EXLButtonSendToLabel">Add to e-Shelf</span>';
 	menu+='							<span class="EXLButtonSendToIcon EXLButtonSendToIconMyShelf"></span>';
 	menu+='							</a>';
 	menu+='						</li>';
-	menu+='						<li class="EXLButtonSendToMyShelf EXLButtonSendToMyShelfRemove" style="display: none;">';
+/*	menu+='						<li class="EXLButtonSendToMyShelf EXLButtonSendToMyShelfRemove" style="display: none;">';
 	menu+='							<a href="basket.do?fn=remove&amp;docs='+recordid+'&amp;exemode=async" onclick="boomCallToRum("sendTo_eshelfRemove_0",false);javascript:eshelfRemove(this,"'+recordid+'","false","scope:(E-LCC),scope:(P),primo_central_multiple_fe","1");return false;" title="Remove from e-Shelf" target="blank">';
 	menu+='							<span class="EXLButtonSendToLabel">Remove from e-Shelf</span>';
 	menu+='							<span class="EXLButtonSendToIcon EXLButtonSendToIconMyShelf"></span>';
@@ -217,7 +221,7 @@ function createActionsMenu(recordid, vid){
 	menu+='							<span class="EXLButtonSendToIcon EXLButtonSendToIconDelicious"></span>';
 	menu+='						</a>';
 	menu+='					</li>';
-						
+*/						
 	menu+='				</ol>';
 	menu+='</li>';
 
