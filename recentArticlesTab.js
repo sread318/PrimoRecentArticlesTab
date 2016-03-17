@@ -128,7 +128,10 @@ function updateURL(url){
 			$("div#"+recordid).parent("div").parent("td").find(".EXLTabHeaderButtonPopout").children("a").attr("href", newUrl);
 			
 			if (displayActions==true){
-				var actions=$("div#"+recordid).parent("div").parent("td").find(".EXLTabHeaderButtons").html();
+				//var actions=$("div#"+recordid).parent("div").parent("td").find(".EXLTabHeaderButtons").html();
+				var actions=createActionsMenu(recordid, vid);
+				console.log(actions);
+
 				$(".EXLTabHeaderButtons").last().html(actions);
 			}
 		}
@@ -138,7 +141,7 @@ function updateURL(url){
 
 function createActionsMenu(recordid, vid){
 
-	menu="";
+	menu="<ul>";
 	
 	menu+='<li class="EXLTabHeaderButtonSendTo">';
   	menu+='	<a href="#" name="in'+recordid+'_51f21" id="in'+recordid+'_51f21" title="Show actions options">';
@@ -224,7 +227,9 @@ function createActionsMenu(recordid, vid){
 */						
 	menu+='				</ol>';
 	menu+='</li>';
-
+	menu+='</ul>';
+	console.log(menu);
+	
 	return menu;
 
 
