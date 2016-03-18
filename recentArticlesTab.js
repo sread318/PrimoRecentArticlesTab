@@ -24,7 +24,16 @@ jQuery( document ).ready(function() {
 	displayActions=true;
 	
 	//Your institution's VID
-	vid="LCC";
+
+      var $vid;
+      $vid = $('#vid');
+      if ($vid.length === 0) {
+        $vid = $('#vid_browse_input');
+      }
+      vid= $vid.val();
+      scopes = $('#scopesListContainer').find('input:checked').val();
+      console.log(scopes);
+
 	
 	var emailEnc=encodeURIComponent(email);
 
@@ -151,24 +160,24 @@ function createActionsMenu(recordid, vid){
 	menu+='	<ol class="EXLTabHeaderButtonSendToList">';
 			
 	menu+='		<li class="EXLButtonSendToMyShelf EXLButtonSendToMyShelfAdd">';
-	menu+='							<a href="basket.do?fn=create&amp;docs='+recordid+'&amp;exemode=async" onclick="boomCallToRum(\"eShelf_0\",false);javascript:eshelfCreate(this,\"'+recordid+'\",\"false\",\"scope:(E-LCC),scope:(P),primo_central_multiple_fe\",\"1\");return false;" title="Add to e-Shelf" target="blank">';
+	menu+='							<a href="basket.do?fn=create&amp;docs='+recordid+'&amp;exemode=async" onclick="boomCallToRum(\"eShelf_0\",false);javascript:eshelfCreate(this,\"'+recordid+'\",\"false\",\"scope:'+scopes+'\",\"1\");return false;" title="Add to e-Shelf" target="blank">';
 	menu+='							<span class="EXLButtonSendToLabel">Add to e-Shelf</span>';
 	menu+='							<span class="EXLButtonSendToIcon EXLButtonSendToIconMyShelf"></span>';
 	menu+='							</a>';
 	menu+='						</li>';
-/*	menu+='						<li class="EXLButtonSendToMyShelf EXLButtonSendToMyShelfRemove" style="display: none;">';
-	menu+='							<a href="basket.do?fn=remove&amp;docs='+recordid+'&amp;exemode=async" onclick="boomCallToRum("sendTo_eshelfRemove_0",false);javascript:eshelfRemove(this,"'+recordid+'","false","scope:(E-LCC),scope:(P),primo_central_multiple_fe","1");return false;" title="Remove from e-Shelf" target="blank">';
+	menu+='						<li class="EXLButtonSendToMyShelf EXLButtonSendToMyShelfRemove" style="display: none;">';
+	menu+='							<a href="basket.do?fn=remove&amp;docs='+recordid+'&amp;exemode=async" onclick="boomCallToRum(\"sendTo_eshelfRemove_0\",false);javascript:eshelfRemove(this,\"'+recordid+'\",\"false\",\"scope:'+scopes+'\",\"1\");return false;" title="Remove from e-Shelf" target="blank">';
 	menu+='							<span class="EXLButtonSendToLabel">Remove from e-Shelf</span>';
 	menu+='							<span class="EXLButtonSendToIcon EXLButtonSendToIconMyShelf"></span>';
 	menu+='							</a>';
 	menu+='						</li>';
 	menu+='					<li class="EXLButtonSendToMail">';
-	menu+='						<a href="email.do?fn=email&amp;docs='+recordid+'&amp;vid=LCC&amp;fromCommand=true&amp;doc='+recordid+'&amp;scope=scope%3a(E-LCC)%2cscope%3a(P)%2cprimo_central_multiple_fe&amp;indx=1&amp;" onclick="boomCallToRum('sendTo_email_0',false);javascript:sendPrintPopOut(this);return false;" title="Send record by E-mail(opens in a new window)" target="blank">';
+	menu+='						<a href="email.do?fn=email&amp;docs='+recordid+'&amp;vid='+vid+'&amp;fromCommand=true&amp;doc='+recordid+'&amp;scope=scope:'+scopes+'&amp;indx=1&amp;" onclick="boomCallToRum(\"sendTo_email_0\",false);javascript:sendPrintPopOut(this);return false;" title="Send record by E-mail(opens in a new window)" target="blank">';
 	menu+='						<span class="EXLButtonSendToLabel">E-mail</span>';
 	menu+='						<span class="EXLButtonSendToIcon EXLButtonSendToIconMail"></span>';
 	menu+='						</a>';
 	menu+='					</li>';
-	menu+='				<li class="EXLButtonSendToPrint">';
+/*	menu+='				<li class="EXLButtonSendToPrint">';
 	menu+='						<a href="display.do?fn=print&amp;tab=default_tab&amp;indx=1&amp;display=print&amp;docs='+recordid+'&amp;indx=1&amp;" onclick="boomCallToRum('sendTo_print_0',false);javascript:sendPrintPopOut(this);return false;" title="Print record (opens in a new window)" target="blank">';
 	menu+='						<span class="EXLButtonSendToLabel">Print</span>';
 	menu+='						<span class="EXLButtonSendToIcon EXLButtonSendToIconPrint"></span>';
